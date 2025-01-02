@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import AllRoutes from './AllRoutes';
+import ToastMessage from './widgets/ToastMessage';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style={{color: 'blue', marginTop: 20, marginBottom: 20}}>ReactJS CRUD Using Vanilla-REDUX & JSON Server</h1>
+      <ToastMessage />
+      <AllRoutes />
+
     </div>
   );
 }

@@ -1,0 +1,6 @@
+{
+    "users": [
+      { "id": "1", "name": "a name", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" }
+    ]
+  
+  }

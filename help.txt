@@ -1,0 +1,5 @@
+// json-server cli create file
+
+json-server --watch src/Data/db.json --port 8000
+
+npx json-server db.json
