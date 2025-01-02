@@ -1,6 +1,12 @@
 {
     "users": [
-      { "id": "1", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" }
+      { "id": "1", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
+      { "id": "2", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
+      { "id": "3", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
+      { "id": "4", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
+      { "id": "5", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
+      { "id": "6", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
+      { "id": "7", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" }
     ]
   
   }

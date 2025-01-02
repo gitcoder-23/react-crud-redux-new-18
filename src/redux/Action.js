@@ -1,5 +1,5 @@
 import axios from "axios"
-import { FAIL_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionType"
+import { DELETE_USER, FAIL_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionType"
 import { RootApi } from "../config/RootApi"
 
 export const makeRequest=() => {
@@ -25,17 +25,42 @@ export const getUserList=(data) => {
     
 }
 
-export const fetchUserList = () => {
+export const deleteUser=() => {
+    return {
+        type: DELETE_USER,
+    }
+    
+}
+
+export const fetchUserListAction = () => {
     return (dispatch) => {
         dispatch(makeRequest());
 
-        setTimeout(() => {
+        // setTimeout(() => {
             RootApi.get('/users').then((resp) => {
 
                 const userList = resp.data.reverse();
                 console.log('userList=>', userList);
                 dispatch(getUserList(userList));
                 return userList;
+            }).catch((err) => {
+                dispatch(failRequest(err.message));
+    
+            })
+        // }, 2000);
+       
+   } 
+
+}
+
+export const removeUserAction = (code) => {
+    return (dispatch) => {
+        dispatch(makeRequest());
+
+        setTimeout(() => {
+            RootApi.delete(`/users/${code}`).then((resp) => {
+
+                dispatch(deleteUser());
             }).catch((err) => {
                 dispatch(failRequest(err.message));
     

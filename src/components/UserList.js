@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react'
 import {connect} from 'react-redux'
-import { fetchUserList } from '../redux/Action'
+import { fetchUserListAction, removeUserAction } from '../redux/Action'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Ensure this CSS is included
+
+
 
 const UserList = (props) => {
 
@@ -12,7 +16,18 @@ const UserList = (props) => {
 
   const { loading, errorMessage, userList} = props.user;
 
+  const handleDelete = (userId) => {
+    if (window.confirm('Do you want to remove?')) {
   
+      props.removeUser(userId);
+      props.loadUser();
+      toast.success("User deleted", {
+        position: "top-right",
+    });
+
+    }
+
+  }
   return (
     
     loading ? <div><h2>Loading...</h2></div> : 
@@ -22,8 +37,8 @@ const UserList = (props) => {
 
       <div className="card">
         <div className="card-header">
-          <h2>User List</h2>
-      </div>
+              <Link to={'/user/add'} className='btn btn-primary'>Add User [+]  </Link>
+        </div>
     
       <div className="card-body">
           <table className="table table-bordered">
@@ -43,15 +58,15 @@ const UserList = (props) => {
 
                       return (
                         <tr key={item.id}>
-                          <td>{item.id}</td>
+                          <td>{id + 1}</td>
                           <td>{item.name}</td>
                           <td>{item.email}</td>
                           <td>{item.phone}</td>
                           <td>{item.role}</td>
                           <td>
-                            <Link to={''} className="btn btn-warning mx-2" >Edit</Link>
+                            <Link to={`/user/edit/${item.id}`} className="btn btn-warning mx-2" >Edit</Link>
                            
-                            <button className='btn btn-danger'>Delete</button>
+                            <button onClick={() => handleDelete(item.id)} className='btn btn-danger'>Delete</button>
                           </td>
                         </tr>
                       );
@@ -77,7 +92,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
   return {
-    loadUser:() => dispatch(fetchUserList()),
+    loadUser:() => dispatch(fetchUserListAction()),
+    removeUser:(code) => dispatch(removeUserAction(code)),
   }
 }
 
