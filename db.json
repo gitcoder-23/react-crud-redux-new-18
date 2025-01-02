@@ -9,21 +9,21 @@
     },
     {
       "id": "2",
-      "name": "Jecob",
+      "name": "Martha",
       "role": "admin",
       "email": "admin@yopmail.com",
       "phone": "9876543212"
     },
     {
       "id": "3",
-      "name": "Jecob",
+      "name": "Mani",
       "role": "admin",
       "email": "admin@yopmail.com",
       "phone": "9876543212"
     },
     {
       "id": "4",
-      "name": "Jecob",
+      "name": "Poland",
       "role": "admin",
       "email": "admin@yopmail.com",
       "phone": "9876543212"
@@ -36,32 +36,18 @@
       "phone": "9876543212"
     },
     {
-      "id": "6",
-      "name": "Jecob",
-      "role": "admin",
-      "email": "admin@yopmail.com",
-      "phone": "9876543212"
+      "name": "Gana",
+      "email": "gana@yopmail.com",
+      "phone": "9876543213",
+      "role": "staff",
+      "id": "6239"
     },
     {
-      "id": "7",
-      "name": "Jecob",
-      "role": "admin",
-      "email": "admin@yopmail.com",
-      "phone": "9876543212"
-    },
-    {
-      "id": "6239",
-      "name": "dsfdsaf",
-      "email": "fdfsdf",
-      "phone": "dfsdfdf",
-      "role": "staff"
-    },
-    {
-      "id": "3a0b",
-      "name": "sadsdasd",
-      "email": "sdsad@dfdsf.cxc",
-      "phone": "321332132321",
-      "role": "hr"
+      "name": "Rama",
+      "email": "rama@dfdsf.cxc",
+      "phone": "9876543213",
+      "role": "finance",
+      "id": "3a0b"
     }
   ]
 }

@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import {connect} from 'react-redux'
 import { fetchUserListAction, removeUserAction } from '../redux/Action'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 
 
 
 const UserList = (props) => {
+  const navigate = useNavigate();
+
 
 
   useEffect(() => {
@@ -33,6 +35,12 @@ const UserList = (props) => {
     }
 
   }
+
+  const loadEdit = (eData) => {
+    navigate(`/user/edit/${eData.id}`, {
+      state: { singleUser: eData },
+    });
+  };
   return (
     
     loading ? <div><h2>Loading...</h2></div> : 
