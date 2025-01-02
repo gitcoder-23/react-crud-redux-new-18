@@ -1,5 +1,6 @@
 import axios from "axios"
 import { FAIL_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionType"
+import { RootApi } from "../config/RootApi"
 
 export const makeRequest=() => {
     return {
@@ -27,16 +28,20 @@ export const getUserList=(data) => {
 export const fetchUserList = () => {
     return (dispatch) => {
         dispatch(makeRequest());
-        axios.get('http://localhost:3021/users').then((resp) => {
 
-            const userList = resp.data.reverse();
-            console.log('userList=>', userList);
-            dispatch(getUserList(userList));
-            return userList;
-        }).catch((err) => {
-            dispatch(failRequest(err.message));
+        setTimeout(() => {
+            RootApi.get('/users').then((resp) => {
 
-        })
+                const userList = resp.data.reverse();
+                console.log('userList=>', userList);
+                dispatch(getUserList(userList));
+                return userList;
+            }).catch((err) => {
+                dispatch(failRequest(err.message));
+    
+            })
+        }, 2000);
+       
    } 
 
 }

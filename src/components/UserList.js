@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react'
 import {connect} from 'react-redux'
 import { fetchUserList } from '../redux/Action'
+import { Link } from 'react-router-dom'
 
 const UserList = (props) => {
+
 
   useEffect(() => {
     props.loadUser();
   }, [])
+
+  const { loading, errorMessage, userList} = props.user;
+
   
   return (
     
-    props.user.loading ? <div><h2>Loading...</h2></div> : 
-    props.user.errorMessage ? <div><h2>{props.user.errorMessage}</h2></div>:
+    loading ? <div><h2>Loading...</h2></div> : 
+    errorMessage ? <div><h2>{errorMessage}</h2></div>:
     
     <div>
 
@@ -32,10 +37,27 @@ const UserList = (props) => {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-              </tr>
+                <tbody>
+                  {
+                    userList && userList.map((item, id) => {
+
+                      return (
+                        <tr key={item.id}>
+                          <td>{item.id}</td>
+                          <td>{item.name}</td>
+                          <td>{item.email}</td>
+                          <td>{item.phone}</td>
+                          <td>{item.role}</td>
+                          <td>
+                            <Link to={''} className="btn btn-warning mx-2" >Edit</Link>
+                           
+                            <button className='btn btn-danger'>Delete</button>
+                          </td>
+                        </tr>
+                      );
+                    })
+                  }
+             
             </tbody>
           </table>
       </div>
