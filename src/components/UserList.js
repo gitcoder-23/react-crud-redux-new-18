@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import {connect} from 'react-redux'
+import { fetchUserList } from '../redux/Action'
 
-const UserList = () => {
+const UserList = (props) => {
+
+  useEffect(() => {
+    props.loadUser();
+  }, [])
+  
   return (
+    
+    props.user.loading ? <div><h2>Loading...</h2></div> : 
+    props.user.errorMessage ? <div><h2>{props.user.errorMessage}</h2></div>:
+    
     <div>
+
       <div className="card">
         <div className="card-header">
           <h2>User List</h2>
@@ -32,4 +44,20 @@ const UserList = () => {
   )
 }
 
-export default UserList
+const mapStateToProps = (state) => {
+
+  return {
+    user: state.user,
+  }
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+
+  return {
+    loadUser:() => dispatch(fetchUserList()),
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (UserList);

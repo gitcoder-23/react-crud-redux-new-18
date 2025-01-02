@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import Store from './redux/Store';
 
 
 
@@ -14,11 +16,14 @@ import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Provider store={Store}>
+      <BrowserRouter>
+      
     
-    <App />
+        <App />
     
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
