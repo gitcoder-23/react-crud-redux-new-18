@@ -1,5 +1,5 @@
 import axios from "axios"
-import { DELETE_USER, FAIL_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionType"
+import { ADD_USER, DELETE_USER, FAIL_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionType"
 import { RootApi } from "../config/RootApi"
 
 export const makeRequest=() => {
@@ -32,6 +32,13 @@ export const deleteUser=() => {
     
 }
 
+export const addUser=() => {
+    return {
+        type: ADD_USER,
+    }
+    
+}
+
 export const fetchUserListAction = () => {
     return (dispatch) => {
         dispatch(makeRequest());
@@ -57,15 +64,31 @@ export const removeUserAction = (code) => {
     return (dispatch) => {
         dispatch(makeRequest());
 
-        setTimeout(() => {
-            RootApi.delete(`/users/${code}`).then((resp) => {
+        RootApi.delete(`/users/${code}`).then((resp) => {
 
-                dispatch(deleteUser());
-            }).catch((err) => {
-                dispatch(failRequest(err.message));
+            dispatch(deleteUser());
+        }).catch((err) => {
+            dispatch(failRequest(err.message));
+
+        })
+       
+   } 
+
+}
+
+export const addUserAction = ({ formData }) => {
+    console.log('userFormData-action=>', formData);
     
-            })
-        }, 2000);
+    return (dispatch) => {
+        dispatch(makeRequest());
+
+        RootApi.post(`/users`, formData).then((resp) => {
+
+            dispatch(addUser());
+        }).catch((err) => {
+            dispatch(failRequest(err.message));
+
+        })
        
    } 
 

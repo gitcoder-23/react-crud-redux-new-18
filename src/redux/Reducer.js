@@ -1,4 +1,4 @@
-import { DELETE_USER, FAIL_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionType";
+import { ADD_USER, DELETE_USER, FAIL_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionType";
 
 const initialState = {
 
@@ -34,6 +34,15 @@ export const Reducer = (state = initialState, action) => {
             }
         
         case DELETE_USER:
+            return {
+                ...state,
+                loading: false,
+                // userList: action.payload,
+                // userObj: {},
+                // errorMessage: ''
+            }
+        
+        case ADD_USER:
             return {
                 ...state,
                 loading: false,

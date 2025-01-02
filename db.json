@@ -1,12 +1,67 @@
 {
-    "users": [
-      { "id": "1", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
-      { "id": "2", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
-      { "id": "3", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
-      { "id": "4", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
-      { "id": "5", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
-      { "id": "6", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" },
-      { "id": "7", "name": "Jecob", "role": "admin", "email":"admin@yopmail.com", "phone": "9876543212" }
-    ]
-  
-  }
+  "users": [
+    {
+      "id": "1",
+      "name": "Jecob",
+      "role": "admin",
+      "email": "admin@yopmail.com",
+      "phone": "9876543212"
+    },
+    {
+      "id": "2",
+      "name": "Jecob",
+      "role": "admin",
+      "email": "admin@yopmail.com",
+      "phone": "9876543212"
+    },
+    {
+      "id": "3",
+      "name": "Jecob",
+      "role": "admin",
+      "email": "admin@yopmail.com",
+      "phone": "9876543212"
+    },
+    {
+      "id": "4",
+      "name": "Jecob",
+      "role": "admin",
+      "email": "admin@yopmail.com",
+      "phone": "9876543212"
+    },
+    {
+      "id": "5",
+      "name": "Jecob",
+      "role": "admin",
+      "email": "admin@yopmail.com",
+      "phone": "9876543212"
+    },
+    {
+      "id": "6",
+      "name": "Jecob",
+      "role": "admin",
+      "email": "admin@yopmail.com",
+      "phone": "9876543212"
+    },
+    {
+      "id": "7",
+      "name": "Jecob",
+      "role": "admin",
+      "email": "admin@yopmail.com",
+      "phone": "9876543212"
+    },
+    {
+      "id": "6239",
+      "name": "dsfdsaf",
+      "email": "fdfsdf",
+      "phone": "dfsdfdf",
+      "role": "staff"
+    },
+    {
+      "id": "3a0b",
+      "name": "sadsdasd",
+      "email": "sdsad@dfdsf.cxc",
+      "phone": "321332132321",
+      "role": "hr"
+    }
+  ]
+}

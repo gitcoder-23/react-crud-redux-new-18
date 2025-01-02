@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import { fetchUserListAction, removeUserAction } from '../redux/Action'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Ensure this CSS is included
 
 
 
@@ -20,10 +19,16 @@ const UserList = (props) => {
     if (window.confirm('Do you want to remove?')) {
   
       props.removeUser(userId);
-      props.loadUser();
       toast.success("User deleted", {
         position: "top-right",
-    });
+        onClose : () => {
+          console.log('onClose');
+          
+          props.loadUser();
+
+        }
+      });
+
 
     }
 
