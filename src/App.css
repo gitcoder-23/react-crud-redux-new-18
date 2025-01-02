@@ -7,6 +7,19 @@
   pointer-events: none;
 }
 
+
+.header {
+  width: 100%;
+  background-color: blue;
+  color: white;
+  padding: 1%;
+  text-align: left;
+}
+.link-cls {
+
+color: wheat;
+padding: 5%;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

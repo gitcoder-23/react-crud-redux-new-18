@@ -13,7 +13,8 @@ const AllRoutes = () => {
     <Route path='/' exact element={<HomePage /> } />
     <Route path='/user' exact element={<UserList /> } />
     <Route path='/user/add' exact element={<AddUser /> } />
-    <Route path='/user/edit/:code' exact element={<UpdateUser /> } />
+      <Route path='/user/edit/:code' exact element={<UpdateUser />} />
+      <Route path='*'  />
     </Routes>
   )
 }
