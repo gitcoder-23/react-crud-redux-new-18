@@ -5,6 +5,7 @@ json-server --watch src/Data/db.json --port 8000
 npx json-server db.json
 // youtut
 https://youtu.be/MEtQTB_xyMc?si=0fyoP3bAbVV_7W3D
+vid: 33:23
 
 // Github
 https://github.com/nihira2020/reduxcrud
